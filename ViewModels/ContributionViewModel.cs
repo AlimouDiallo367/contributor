@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace TP1_Donateurs.ViewModels
 {
-    public class ContributionViewModel
+    public class ContributionViewModel : BaseViewModel
     {
+        public ContributionViewModel()
+        {
+            
+        }
+
     }
 }

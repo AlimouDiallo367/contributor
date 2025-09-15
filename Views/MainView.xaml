@@ -4,9 +4,28 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP1_Donateurs.Views"
+        xmlns:viewmodels="clr-namespace:TP1_Donateurs.ViewModels"
         mc:Ignorable="d"
-        Title="MainView" Height="650" Width="900">
+        Title="Donateur" Height="650" Width="1000" x:Name="win">
+    <Window.DataContext>
+        <viewmodels:MainViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewmodels:ContributionViewModel}">
+            <local:ContributionView/>
+        </DataTemplate> 
+    </Window.Resources> 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0">
+            <MenuItem Header="Configuration"/>
+        </Menu>
+
+        <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}"></ContentControl>
     </Grid>
 </Window>

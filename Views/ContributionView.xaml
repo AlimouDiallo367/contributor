@@ -3,10 +3,56 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:TP1_Donateurs.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+             d:DesignHeight="650" d:DesignWidth="900">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+       
+        <Grid Grid.Row="0" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/> 
+                <ColumnDefinition Width="150"/>   <!-- Space -->
+                <ColumnDefinition Width="Auto"/> 
+                <ColumnDefinition Width="150"/> <!-- Space -->
+                <ColumnDefinition Width="Auto"/> 
+            </Grid.ColumnDefinitions>
+           
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <Button Content="Ajouter" Width="100" Margin="0,0,10,0"/>
+                <Button Content="Effacer" Width="100"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,20,0">
+                <TextBlock Text="Décompte" VerticalAlignment="Center"/>
+                <TextBlock Text="0" Margin="5,0,0,0" VerticalAlignment="Center"/>
+            </StackPanel>
             
+            <StackPanel Grid.Column="4" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock Text="Illégales seulement" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <CheckBox IsChecked="False" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+
+        <ListView Grid.Row="1"  Margin="10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Type" Width="80"/>
+                    <GridViewColumn Header="Prénom" Width="80"/>
+                    <GridViewColumn Header="Nom" Width="80"/>
+                    <GridViewColumn Header="Montant" Width="80"/>
+                    <GridViewColumn Header="Nb. Versements" Width="100"/>
+                    <GridViewColumn Header="Municipalité" Width="100"/>
+                    <GridViewColumn Header="Code postal" Width="80"/>
+                    <GridViewColumn Header="Parti" Width="80"/>
+                    <GridViewColumn Header="Candidat" Width="80"/>
+                    <GridViewColumn Header="Date évènement" Width="100"/>
+                    <GridViewColumn Header="Année financière" Width="100"/>
+                    <GridViewColumn Header="Illégale?" Width="200"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </UserControl>
