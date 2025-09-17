@@ -23,7 +23,6 @@ namespace TP1_Donateurs.Properties {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class OthersResources {
-        
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
@@ -60,6 +59,17 @@ namespace TP1_Donateurs.Properties {
             }
         }
         
+        /// Added by me 
+        internal static string contributions
+        {
+            get
+            {
+                return ResourceManager.GetString("contributions", resourceCulture);
+            }
+        }
+
+
+
         /// <summary>
         ///   Recherche une ressource localisée de type System.Byte[].
         /// </summary>

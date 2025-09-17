@@ -8,140 +8,130 @@ using System.Threading.Tasks;
 
 namespace TP1_Donateurs.Models
 {
-    public class Contribution : INotifyPropertyChanged
+    public class Contribution
     {
-        private string _type;
-        private string _nom;
-        private string _prenom;
-        private decimal _montant;
-        private int _nbVersements;
-        private string _municipalite;
-        private string _codePostal;
-        private string _parti;
-        private string _candidat;
-        private DateTime _dateEvenement;
+        private string type;
+        private string nom;
+        private string prenom;
+        private decimal montant;
+        private int nbVersements;
+        private string municipalite;
+        private string codePostal;
+        private string parti;
+        private string candidat;
+        private DateTime? dateEvenement = null;
         private int anneeFinanciere;
 
-        public Contribution(string ligneCSV)
-        {
-            string[] champsFichier = ligneCSV.Split(',');
-           
-            Type = champsFichier[0].Trim();
-            Nom = champsFichier[1].Trim();
-            Prenom = champsFichier[2].Trim();
-            Montant = decimal.Parse(champsFichier[3]);
-            NbVersements = int.Parse(champsFichier[4]);
-            Municipalite = champsFichier[5].Trim();
-            CodePostal = champsFichier[6].Trim();
-            Parti = champsFichier[7].Trim();
-            Candidat = champsFichier[8].Trim();
-            DateEvenement = DateTime.Parse(champsFichier[9]);
-            AnneeFinanciere = int.Parse((champsFichier[10]));
-        }
 
-        public string Type
+        public Contribution(string ligneCsv)
         {
-            get { return _type; }
-            set { _type = value; }
-        }
+            string[] champs = ligneCsv.Split(";");
 
-        public string Nom
-        {
-            get => _nom;
-            set
+            if (champs.Length != 10)
+                throw new ArgumentException($"Ligne non valide : {ligneCsv}");
+
+            this.type = champs[0];
+
+            string[] nomPrenom = champs[1].Split(",");
+            this.nom = nomPrenom[0].Trim();
+            this.prenom = nomPrenom[1].Trim();
+
+            this.montant = Convert.ToDecimal(champs[2]);
+            this.nbVersements = Convert.ToInt32(champs[3]);
+
+            this.municipalite = champs[4];
+            this.codePostal = champs[5];
+
+            this.parti = champs[6];
+            this.candidat = champs[7];
+
+            if (champs[8] != "")
             {
-                _nom = value;
+                string[] dateSplit = champs[8].Split("-");
+                this.dateEvenement = new DateTime(
+                    Convert.ToInt32(dateSplit[0]),
+                    Convert.ToInt32(dateSplit[1]),
+                    Convert.ToInt32(dateSplit[2]));
+            }
+
+            this.anneeFinanciere = Convert.ToInt32(champs[9]);
+        }
+
+
+        public string ToCsv()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append(this.Type);
+            sb.Append(';');
+
+            sb.Append(this.Nom);
+            sb.Append(", ");
+            sb.Append(this.Prenom);
+            sb.Append(';');
+
+            sb.Append(this.Montant);
+            sb.Append(';');
+
+            sb.Append(this.NbVersements);
+            sb.Append(';');
+
+            sb.Append(this.Municipalite);
+            sb.Append(';');
+
+            sb.Append(this.CodePostal);
+            sb.Append(';');
+
+            sb.Append(this.Parti);
+            sb.Append(';');
+
+            sb.Append(this.Candidat);
+            sb.Append(';');
+
+            sb.Append(this.DateEvenement?.ToString("yyyy-MM-dd") ?? "");
+            sb.Append(';');
+
+            sb.Append(this.AnneeFinanciere);
+
+            return sb.ToString();
+        }
+
+        public bool EstIllegale
+        {
+            get
+            {
+                return Type is "Parti" or "Candidat" or "Député" or "Électeur" && Montant > 200 ||
+                        Type == "Campagne" && Montant > 500;
             }
         }
 
-        public string Prenom
-        {
-            get => _prenom;
-            set
-            {
-                _prenom = value;
-            }
-        }
+        public string Type => type;
 
-        public decimal Montant
-        {
-            get => _montant;
-            set
-            {
-                _montant = value;
-            }
-        }
+        public string Nom => nom;
 
-        public int NbVersements
-        {
-            get => _nbVersements;
-            set
-            {
-                _nbVersements = value;
-            }
-        }
+        public string Prenom => prenom;
 
-        public string Municipalite
-        {
-            get => _municipalite;
-            set
-            {
-                _municipalite = value;
-            }
-        }
+        public decimal Montant => montant;
 
-        public string CodePostal
-        {
-            get { return _codePostal; }
-            set
-            {
-                _codePostal = value;
-            }
-        }
+        public int NbVersements => nbVersements;
 
-        public string Parti
-        {
-            get => _parti;
-            set
-            {
-                _parti = value;
-            }
-        }
+        public string Municipalite => municipalite;
 
-        public string Candidat
-        {
-            get => _candidat;
-            set
-            {
-                _candidat = value;
-            }
-        }
+        public string CodePostal => codePostal;
 
-        public DateTime DateEvenement
-        {
-            get => _dateEvenement;
-            set
-            {
-                _dateEvenement = value;
-            }
-        }
+        public string Parti => parti;
 
-        public int AnneeFinanciere
-        {
-            get => anneeFinanciere;
-            set
-            {
-                anneeFinanciere = value;
-            }
-        }
+        public string Candidat => candidat;
 
-        // PropertyChanged 
-        
-        public event PropertyChangedEventHandler? PropertyChanged;
+        public DateTime? DateEvenement => dateEvenement;
 
-        private void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        public int AnneeFinanciere => anneeFinanciere;
+
+        public override string ToString()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            return this.ToCsv();
         }
     }
 }
+
+

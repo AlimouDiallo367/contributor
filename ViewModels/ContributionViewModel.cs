@@ -19,7 +19,9 @@ namespace TP1_Donateurs.ViewModels
 
         public ContributionViewModel()
         {
-            
+            LesContributions = new ObservableCollection<Contribution>();
+
+            string csv = TP1_Donateurs.Properties.OthersResources.contributions;
         }
 
     }
