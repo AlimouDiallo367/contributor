@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using TP1_Donateurs.Models;
 using TP1_Donateurs.ViewModels.Commands;
 
@@ -30,15 +31,30 @@ namespace TP1_Donateurs.ViewModels
         #region Boutons
         private void ImporterFichier(object? obj)
         {
+            string messageBoxText = "Fichier CSV non valide";
+            string caption = "Erreur";
+
+            MessageBoxButton button = MessageBoxButton.OKCancel;
+            MessageBoxImage icon = MessageBoxImage.Warning;
+
             var dialog = new OpenFileDialog(); 
 
             if (dialog.ShowDialog() == true)
             {
-                analyseur = new AnalyseurContributions(dialog.FileName);
-                foreach (var contribution in analyseur.Contributions)
+                try
                 {
-                    LesContributions.Add(contribution); 
+                    analyseur = new AnalyseurContributions(dialog.FileName);
+                    foreach (var contribution in analyseur.Contributions)
+                    {
+                        LesContributions.Add(contribution); 
+                    }
+
                 }
+                catch (Exception ex)
+                {
+                    //MessageBox.Show(messageBoxText, caption, button, icon); 
+                    MessageBox.Show("Fichier CSV non valide.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error); 
+                }    
             }
 
         }
