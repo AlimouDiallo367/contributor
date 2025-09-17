@@ -18,12 +18,7 @@ namespace TP1_Donateurs.ViewModels
 
 
         private AnalyseurContributions analyseur;
-        private string _type, _nom, _prenom, _municipalite, _codePostal, _parti, _candidat;
-        private decimal _montant;
-        private int _nbVersements, anneeFinanciere;
-        private DateTime _dateEvenement;
-
-        public ObservableCollection<Contribution> LesContributions { get; set; } 
+        public ObservableCollection<Contribution> LesContributions { get; set; }
 
         public ContributionViewModel()
         {

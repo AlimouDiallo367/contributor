@@ -3,8 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:converters="clr-namespace:TP1_Donateurs.ViewModels.Converters"
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="900">
+    <UserControl.Resources>
+        <converters:BoolToIllegaleConverter x:Key="boolToIllegale"/>
+    </UserControl.Resources>
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -50,7 +54,7 @@
                     <GridViewColumn Header="Candidat" DisplayMemberBinding="{Binding Candidat}" Width="80"/>
                     <GridViewColumn Header="Date évènement" DisplayMemberBinding="{Binding DateEvenement}" Width="100"/>
                     <GridViewColumn Header="Année financière" DisplayMemberBinding="{Binding AnneeFinanciere}" Width="100"/>
-                    <GridViewColumn Header="Illégale?"  DisplayMemberBinding="{Binding Illegale}" Width="200"/>
+                    <GridViewColumn Header="Illégale?"  DisplayMemberBinding="{Binding EstIllegale, Converter={StaticResource boolToIllegale}}" Width="200"/>
                 </GridView>
             </ListView.View>
         </ListView>
