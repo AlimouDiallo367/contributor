@@ -21,7 +21,7 @@
             </Grid.ColumnDefinitions>
            
             <StackPanel Grid.Column="0" Orientation="Horizontal">
-                <Button Content="Ajouter" Width="100" Margin="0,0,10,0"/>
+                <Button Content="Ajouter" Command="{Binding CmdImporterFichier}" Width="100" Margin="0,0,10,0"/>
                 <Button Content="Effacer" Width="100"/>
             </StackPanel>
 
@@ -36,21 +36,21 @@
             </StackPanel>
         </Grid>
 
-        <ListView Grid.Row="1"  Margin="10">
+        <ListView Grid.Row="1"  Margin="10" ItemsSource="{Binding LesContributions}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Type" Width="80"/>
-                    <GridViewColumn Header="Prénom" Width="80"/>
-                    <GridViewColumn Header="Nom" Width="80"/>
-                    <GridViewColumn Header="Montant" Width="80"/>
-                    <GridViewColumn Header="Nb. Versements" Width="100"/>
-                    <GridViewColumn Header="Municipalité" Width="100"/>
-                    <GridViewColumn Header="Code postal" Width="80"/>
-                    <GridViewColumn Header="Parti" Width="80"/>
-                    <GridViewColumn Header="Candidat" Width="80"/>
-                    <GridViewColumn Header="Date évènement" Width="100"/>
-                    <GridViewColumn Header="Année financière" Width="100"/>
-                    <GridViewColumn Header="Illégale?" Width="200"/>
+                    <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Type}" Width="80"/>
+                    <GridViewColumn Header="Prénom"  DisplayMemberBinding="{Binding Prenom}" Width="80"/>
+                    <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Nom}" Width="80"/>
+                    <GridViewColumn Header="Montant" DisplayMemberBinding="{Binding Montant}" Width="80"/>
+                    <GridViewColumn Header="Nb. Versements" DisplayMemberBinding="{Binding NbVersements}" Width="100"/>
+                    <GridViewColumn Header="Municipalité" DisplayMemberBinding="{Binding Municipalite}" Width="100"/>
+                    <GridViewColumn Header="Code postal"  DisplayMemberBinding="{Binding CodePostal}" Width="80"/>
+                    <GridViewColumn Header="Parti" DisplayMemberBinding="{Binding Parti}" Width="80"/>
+                    <GridViewColumn Header="Candidat" DisplayMemberBinding="{Binding Candidat}" Width="80"/>
+                    <GridViewColumn Header="Date évènement" DisplayMemberBinding="{Binding DateEvenement}" Width="100"/>
+                    <GridViewColumn Header="Année financière" DisplayMemberBinding="{Binding AnneeFinanciere}" Width="100"/>
+                    <GridViewColumn Header="Illégale?"  DisplayMemberBinding="{Binding Illegale}" Width="200"/>
                 </GridView>
             </ListView.View>
         </ListView>

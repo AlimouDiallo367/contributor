@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\Commands\" />
     <Folder Include="ViewModels\Converters\" />
   </ItemGroup>
 
@@ -27,6 +26,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>OthersResources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Update="Properties\traduction.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -38,6 +42,10 @@
     <EmbeddedResource Update="Properties\OthersResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>OthersResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Properties\traduction.resx">
       <Generator>ResXFileCodeGenerator</Generator>
