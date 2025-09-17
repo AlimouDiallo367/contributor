@@ -15,6 +15,7 @@ namespace TP1_Donateurs.ViewModels
     {
         #region RelayCommands
         public RelayCommand CmdImporterFichier {  get; private set; }
+        public RelayCommand CmdEffacer { get; private set; }
         #endregion
 
 
@@ -25,7 +26,7 @@ namespace TP1_Donateurs.ViewModels
         {
             LesContributions = new ObservableCollection<Contribution>();
             CmdImporterFichier = new RelayCommand(ImporterFichier, null);
-           
+            CmdEffacer = new RelayCommand(EffacerContributions, null);
         }
 
         #region Boutons
@@ -57,6 +58,11 @@ namespace TP1_Donateurs.ViewModels
                 }    
             }
 
+        }
+
+        private void EffacerContributions(object? obj)
+        {
+            LesContributions.Clear();
         }
         #endregion
 
