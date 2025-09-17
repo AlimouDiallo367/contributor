@@ -9,8 +9,40 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\election.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ViewModels\Commands\" />
     <Folder Include="ViewModels\Converters\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\election.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\OthersResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>OthersResources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\traduction.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>traduction.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\OthersResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>OthersResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\traduction.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>traduction.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
