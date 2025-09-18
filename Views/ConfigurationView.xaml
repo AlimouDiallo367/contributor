@@ -4,9 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP1_Donateurs.Views"
+        xmlns:viewmodels="clr-namespace:TP1_Donateurs.ViewModels"
         mc:Ignorable="d"
         Title="Configuration" Height="450" Width="350" Icon="/Resources/election.ico">
     
+     <Window.DataContext>
+         <viewmodels:ConfigurationViewModel/>
+     </Window.DataContext>
+
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -17,19 +22,22 @@
         <StackPanel Grid.Row="0">
             <WrapPanel HorizontalAlignment="Center">
                 <Label Content="Langue:" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                <ComboBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="80"/>
+                <ComboBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="80" ItemsSource="{Binding LangueSelectionnee}" SelectedItem="{Binding LangueSelectionnee, Mode=TwoWay}">
+                    <!--<ComboBoxItem Content="Français" IsSelected="True"/>
+                    <ComboBoxItem Content="English"/>-->
+                </ComboBox>
             </WrapPanel> 
         </StackPanel>
         <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
             <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal">
                 <Label Content="Redémarrer après changements :" VerticalAlignment="Center"/>
-                <CheckBox VerticalAlignment="Center"/>
+                <CheckBox IsChecked="{Binding RedemarrerApresChangements, Mode=TwoWay}" VerticalAlignment="Center"/>
             </WrapPanel>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
             <WrapPanel HorizontalAlignment="Center">
-                <Button Content="Sauvegarder" Margin="0,10,10,10"/>
-                <Button Content="Annuler" Margin="0,10,10,10"/>
+                <Button Content="Sauvegarder" Command="{Binding CmdSauvegarder}" Margin="0,10,10,10"/>
+                <Button Content="Annuler" Command="{Binding CmdAnnuler}" Margin="0,10,10,10"/>
             </WrapPanel>
         </StackPanel>
     </Grid>
