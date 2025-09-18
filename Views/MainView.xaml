@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TP1_Donateurs.Views"
         xmlns:viewmodels="clr-namespace:TP1_Donateurs.ViewModels"
         mc:Ignorable="d"
-        Title="Donateur" Height="650" Width="1000" x:Name="win" Icon="/Resources/election.ico">
+        Title="Donateur" Height="650" Width="900" x:Name="win" Icon="/Resources/election.ico">
     <Window.DataContext>
         <viewmodels:MainViewModel/>
     </Window.DataContext>
@@ -15,6 +15,9 @@
         <DataTemplate DataType="{x:Type viewmodels:ContributionViewModel}">
             <local:ContributionView/>
         </DataTemplate> 
+        <DataTemplate DataType="{x:Type viewmodels:ConfigurationViewModel}">
+            <local:ConfigurationView/>
+        </DataTemplate>
     </Window.Resources> 
     <Grid>
         <Grid.RowDefinitions>
@@ -23,7 +26,7 @@
         </Grid.RowDefinitions>
 
         <Menu Grid.Row="0">
-            <MenuItem Header="Configuration"/>
+            <MenuItem Header="Configuration" Command="{Binding CmdGotoConfiguration}"/>
         </Menu>
 
         <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}"></ContentControl>

@@ -10,7 +10,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace TP1_Donateurs.Views
@@ -18,7 +17,7 @@ namespace TP1_Donateurs.Views
     /// <summary>
     /// Logique d'interaction pour ConfigurationView.xaml
     /// </summary>
-    public partial class ConfigurationView : UserControl
+    public partial class ConfigurationView : Window
     {
         public ConfigurationView()
         {
