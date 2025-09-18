@@ -16,28 +16,37 @@ namespace TP1_Donateurs.ViewModels
         #region RelayCommands
         public RelayCommand CmdImporterFichier {  get; private set; }
         public RelayCommand CmdEffacer { get; private set; }
+        public RelayCommand CmdContributionsIllegales { get; private set; }
         #endregion
 
 
         private AnalyseurContributions analyseur;
         public ObservableCollection<Contribution> LesContributions { get; set; }
 
+        private bool _afficherContributionsIllegales;
+        public bool AfficherContributionsIllegales
+        {
+            get => _afficherContributionsIllegales;
+            set
+            {
+                _afficherContributionsIllegales = value;
+                OnPropertyChanged();
+
+                FiltrerContributions();
+            }
+        }
+
         public ContributionViewModel()
         {
             LesContributions = new ObservableCollection<Contribution>();
             CmdImporterFichier = new RelayCommand(ImporterFichier, null);
             CmdEffacer = new RelayCommand(EffacerContributions, null);
+            // CmdContributionsIllegales = new RelayCommand(AfficherContributionsIllegales, null);
         }
 
         #region Boutons
         private void ImporterFichier(object? obj)
         {
-            string messageBoxText = "Fichier CSV non valide";
-            string caption = "Erreur";
-
-            MessageBoxButton button = MessageBoxButton.OKCancel;
-            MessageBoxImage icon = MessageBoxImage.Warning;
-
             var dialog = new OpenFileDialog(); 
 
             if (dialog.ShowDialog() == true)
@@ -57,13 +66,37 @@ namespace TP1_Donateurs.ViewModels
                     MessageBox.Show("Fichier CSV non valide.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error); 
                 }    
             }
+            CurrentActionMode = ACTIONMODE.ADD;
 
         }
 
         private void EffacerContributions(object? obj)
         {
             LesContributions.Clear();
+            CurrentActionMode = ACTIONMODE.DISPLAY;
         }
+        
+        //private void AfficherContributionsIllegales(object? obj)
+        //{
+        //    LesContributions.Clear();
+        //    foreach (var contribution in analyseur.RechercherContributionsPossiblementIllegales())
+        //    {
+        //        LesContributions.Add(contribution); 
+        //    }
+        //}
+        private void FiltrerContributions()
+        {
+            LesContributions.Clear();
+
+            var data = AfficherContributionsIllegales ? analyseur.RechercherContributionsPossiblementIllegales() : analyseur.Contributions;
+
+            foreach (var contribution in data)
+            {
+                LesContributions.Add(contribution); 
+            }
+        }
+
+
         #endregion
 
     }
