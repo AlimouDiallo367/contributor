@@ -12,6 +12,7 @@ namespace TP1_Donateurs.ViewModels
         public RelayCommand CmdAnnuler { get; private set; }
         #endregion
 
+        public List<string> LangueDisponibles { get; } = new List<string> { "Français", "English" };
         private string _langueSelectionnee;
         public string LangueSelectionnee
         {
@@ -36,9 +37,8 @@ namespace TP1_Donateurs.ViewModels
 
         public ConfigurationViewModel()
         {
-            // Valeurs par défaut
-            LangueSelectionnee = "Français";
-            RedemarrerApresChangements = false;
+            LangueSelectionnee = TP1_Donateurs.Properties.Settings.Default.langue == "fr-CA" ? "Français" : "English";
+            RedemarrerApresChangements = true;
 
             CmdSauvegarder = new RelayCommand(Sauvegarder, null);
             CmdAnnuler = new RelayCommand(Annuler, null);
@@ -46,6 +46,8 @@ namespace TP1_Donateurs.ViewModels
 
         private void Sauvegarder(object? obj)
         {
+            TP1_Donateurs.Properties.Settings.Default.langue = (LangueSelectionnee == "Français") ? "fr-CA" : "en-US";
+            TP1_Donateurs.Properties.Settings.Default.Save();
             try
             {
                 if (RedemarrerApresChangements)
@@ -56,7 +58,7 @@ namespace TP1_Donateurs.ViewModels
                         MessageBoxButton.OK,
                         MessageBoxImage.Information);
 
-                    // Redémarre l'application
+                    // Redémarre l'application -- From Chat
                     Process.Start(Environment.ProcessPath!);
                     Application.Current.Shutdown();
                 }
