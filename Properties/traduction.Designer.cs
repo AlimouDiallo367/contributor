@@ -22,7 +22,7 @@ namespace TP1_Donateurs.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class traduction {
+    public class traduction {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace TP1_Donateurs.Properties {
         ///   Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TP1_Donateurs.Properties.traduction", typeof(traduction).Assembly);
@@ -51,12 +51,219 @@ namespace TP1_Donateurs.Properties {
         ///   les recherches de ressources à l'aide de cette classe de ressource fortement typée.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ajouter.
+        /// </summary>
+        public static string btn_ajouter {
+            get {
+                return ResourceManager.GetString("btn_ajouter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Annuler.
+        /// </summary>
+        public static string btn_annuler {
+            get {
+                return ResourceManager.GetString("btn_annuler", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Effacer.
+        /// </summary>
+        public static string btn_effacer {
+            get {
+                return ResourceManager.GetString("btn_effacer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Sauvegarder.
+        /// </summary>
+        public static string btn_sauvegarder {
+            get {
+                return ResourceManager.GetString("btn_sauvegarder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Année financière.
+        /// </summary>
+        public static string lbl_annee_financiere {
+            get {
+                return ResourceManager.GetString("lbl_annee_financiere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Candidat.
+        /// </summary>
+        public static string lbl_candidat {
+            get {
+                return ResourceManager.GetString("lbl_candidat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Code postal.
+        /// </summary>
+        public static string lbl_code_postal {
+            get {
+                return ResourceManager.GetString("lbl_code_postal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Décompte.
+        /// </summary>
+        public static string lbl_decompte {
+            get {
+                return ResourceManager.GetString("lbl_decompte", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Date événement.
+        /// </summary>
+        public static string lbl_evenement {
+            get {
+                return ResourceManager.GetString("lbl_evenement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Illégale?.
+        /// </summary>
+        public static string lbl_illegale {
+            get {
+                return ResourceManager.GetString("lbl_illegale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Illégales seulement.
+        /// </summary>
+        public static string lbl_illegales {
+            get {
+                return ResourceManager.GetString("lbl_illegales", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Langue.
+        /// </summary>
+        public static string lbl_langue {
+            get {
+                return ResourceManager.GetString("lbl_langue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Montant.
+        /// </summary>
+        public static string lbl_montant {
+            get {
+                return ResourceManager.GetString("lbl_montant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Municipalité.
+        /// </summary>
+        public static string lbl_municipalite {
+            get {
+                return ResourceManager.GetString("lbl_municipalite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nb. Versements.
+        /// </summary>
+        public static string lbl_nb_paiements {
+            get {
+                return ResourceManager.GetString("lbl_nb_paiements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Nom.
+        /// </summary>
+        public static string lbl_nom {
+            get {
+                return ResourceManager.GetString("lbl_nom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Parti.
+        /// </summary>
+        public static string lbl_parti {
+            get {
+                return ResourceManager.GetString("lbl_parti", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Prénom.
+        /// </summary>
+        public static string lbl_prenom {
+            get {
+                return ResourceManager.GetString("lbl_prenom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Redémarrer après changements .
+        /// </summary>
+        public static string lbl_redemarrer {
+            get {
+                return ResourceManager.GetString("lbl_redemarrer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Type.
+        /// </summary>
+        public static string lbl_type {
+            get {
+                return ResourceManager.GetString("lbl_type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à L&apos;application va redémarrer pour appliquer les changements.
+        /// </summary>
+        public static string msg_confirmation_redemarrage {
+            get {
+                return ResourceManager.GetString("msg_confirmation_redemarrage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Fichier CSV non valide..
+        /// </summary>
+        public static string msg_fichier_invalide {
+            get {
+                return ResourceManager.GetString("msg_fichier_invalide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur.
+        /// </summary>
+        public static string titre_erreur {
+            get {
+                return ResourceManager.GetString("titre_erreur", resourceCulture);
             }
         }
     }

@@ -118,72 +118,72 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btn_ajouter" xml:space="preserve">
-    <value>Ajouter</value>
+    <value>Add</value>
   </data>
   <data name="btn_annuler" xml:space="preserve">
-    <value>Annuler</value>
+    <value>Cancel</value>
   </data>
   <data name="btn_effacer" xml:space="preserve">
-    <value>Effacer</value>
+    <value />
   </data>
   <data name="btn_sauvegarder" xml:space="preserve">
-    <value>Sauvegarder</value>
+    <value>Save</value>
   </data>
   <data name="lbl_annee_financiere" xml:space="preserve">
-    <value>Année financière</value>
+    <value>Financial Year</value>
   </data>
   <data name="lbl_candidat" xml:space="preserve">
-    <value>Candidat</value>
+    <value>Candidate</value>
   </data>
   <data name="lbl_code_postal" xml:space="preserve">
-    <value>Code postal</value>
+    <value>ZIP Code</value>
   </data>
   <data name="lbl_decompte" xml:space="preserve">
-    <value>Décompte</value>
+    <value>Count</value>
   </data>
   <data name="lbl_evenement" xml:space="preserve">
-    <value>Date événement</value>
+    <value>Event Date</value>
   </data>
   <data name="lbl_illegale" xml:space="preserve">
-    <value>Illégale?</value>
+    <value>Illegal?</value>
   </data>
   <data name="lbl_illegales" xml:space="preserve">
-    <value>Illégales seulement</value>
+    <value>Illegals only</value>
   </data>
   <data name="lbl_langue" xml:space="preserve">
-    <value>Langue</value>
+    <value>Language</value>
   </data>
   <data name="lbl_montant" xml:space="preserve">
-    <value>Montant</value>
+    <value>Amount</value>
   </data>
   <data name="lbl_municipalite" xml:space="preserve">
-    <value>Municipalité</value>
+    <value>Municipality</value>
   </data>
   <data name="lbl_nb_paiements" xml:space="preserve">
-    <value>Nb. Versements</value>
+    <value>Nb. Payments</value>
   </data>
   <data name="lbl_nom" xml:space="preserve">
-    <value>Nom</value>
+    <value>First Name</value>
   </data>
   <data name="lbl_parti" xml:space="preserve">
-    <value>Parti</value>
+    <value>Party</value>
   </data>
   <data name="lbl_prenom" xml:space="preserve">
-    <value>Prénom</value>
+    <value>Last Name</value>
   </data>
   <data name="lbl_redemarrer" xml:space="preserve">
-    <value>Redémarrer après changements </value>
+    <value>Restart after changes</value>
   </data>
   <data name="lbl_type" xml:space="preserve">
     <value>Type</value>
   </data>
   <data name="msg_confirmation_redemarrage" xml:space="preserve">
-    <value>L'application va redémarrer pour appliquer les changements</value>
+    <value>The application will restart to apply changes</value>
   </data>
   <data name="msg_fichier_invalide" xml:space="preserve">
-    <value>Fichier CSV non valide.</value>
+    <value>Invalid CSV file.</value>
   </data>
   <data name="titre_erreur" xml:space="preserve">
-    <value>Erreur</value>
+    <value>Error</value>
   </data>
 </root>

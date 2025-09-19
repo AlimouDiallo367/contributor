@@ -17,15 +17,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Properties\OthersResources.Designer.cs">
+    <Compile Update="Properties\AutresRessources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>OthersResources.resx</DependentUpon>
+      <DependentUpon>AutresRessources.resx</DependentUpon>
     </Compile>
-    <Compile Update="Properties\Resources.Designer.cs">
+    <Compile Update="Properties\traduction.en-US.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
+      <DependentUpon>traduction.en-US.resx</DependentUpon>
     </Compile>
     <Compile Update="Properties\traduction.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -35,13 +35,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Properties\OthersResources.resx">
+    <EmbeddedResource Update="Properties\AutresRessources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>OthersResources.Designer.cs</LastGenOutput>
+      <LastGenOutput>AutresRessources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Properties\Resources.resx">
+    <EmbeddedResource Update="Properties\traduction.en-US.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <LastGenOutput>traduction.en-US.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Properties\traduction.resx">
       <Generator>ResXFileCodeGenerator</Generator>
