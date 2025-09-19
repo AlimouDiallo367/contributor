@@ -26,17 +26,17 @@
             </Grid.ColumnDefinitions>
            
             <StackPanel Grid.Column="0" Orientation="Horizontal">
-                <Button Content="Ajouter" Command="{Binding CmdImporterFichier}" Width="100" Margin="0,0,10,0"/>
-                <Button Content="Effacer" Command="{Binding CmdEffacer}" Width="100"/>
+                <Button Content="{x:Static p:traduction.btn_ajouter}" Command="{Binding CmdImporterFichier}" Width="100" Margin="0,0,10,0"/>
+                <Button Content="{x:Static p:traduction.btn_effacer}" Command="{Binding CmdEffacer}" Width="100"/>
             </StackPanel>
 
             <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,20,0">
-                <TextBlock Text="Décompte" VerticalAlignment="Center"/>
-                <TextBlock Text="{Binding Path=LesContributions.Count}" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <Label Content="{x:Static p:traduction.lbl_decompte}" VerticalAlignment="Center"/>
+                <Label Content="{Binding Path=LesContributions.Count}" Margin="5,0,0,0" VerticalAlignment="Center"/>
             </StackPanel>
             
             <StackPanel Grid.Column="4" Orientation="Horizontal" VerticalAlignment="Center">
-                <TextBlock Text="Illégales seulement" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                <Label Content="{x:Static p:traduction.lbl_illegales_seulement}" VerticalAlignment="Center" Margin="0,0,5,0"/>
                 <CheckBox IsEnabled="{Binding IsEnabled}" IsChecked="{Binding AfficherContributionsIllegales, Mode=TwoWay}" VerticalAlignment="Center"/>
             </StackPanel>
         </Grid>
@@ -44,18 +44,18 @@
         <ListView Grid.Row="1"  Margin="10" ItemsSource="{Binding LesContributions}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Type}" Width="80"/>
-                    <GridViewColumn Header="Prénom"  DisplayMemberBinding="{Binding Prenom}" Width="80"/>
-                    <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Nom}" Width="80"/>
-                    <GridViewColumn Header="Montant" DisplayMemberBinding="{Binding Montant}" Width="80"/>
-                    <GridViewColumn Header="Nb. Versements" DisplayMemberBinding="{Binding NbVersements}" Width="100"/>
-                    <GridViewColumn Header="Municipalité" DisplayMemberBinding="{Binding Municipalite}" Width="100"/>
-                    <GridViewColumn Header="Code postal"  DisplayMemberBinding="{Binding CodePostal}" Width="80"/>
-                    <GridViewColumn Header="Parti" DisplayMemberBinding="{Binding Parti}" Width="80"/>
-                    <GridViewColumn Header="Candidat" DisplayMemberBinding="{Binding Candidat}" Width="80"/>
-                    <GridViewColumn Header="Date évènement" DisplayMemberBinding="{Binding DateEvenement}" Width="100"/>
-                    <GridViewColumn Header="Année financière" DisplayMemberBinding="{Binding AnneeFinanciere}" Width="100"/>
-                    <GridViewColumn Header="Illégale?"  DisplayMemberBinding="{Binding EstIllegale, Converter={StaticResource boolToIllegale}}" Width="200"/>
+                    <GridViewColumn Header="{x:Static p:traduction.lbl_type}" DisplayMemberBinding="{Binding Type}" Width="80"/>
+                    <GridViewColumn Header="{x:Static p:traduction.lbl_prenom}"  DisplayMemberBinding="{Binding Prenom}" Width="80"/>
+                    <GridViewColumn Header="{x:Static p:traduction.lbl_nom}" DisplayMemberBinding="{Binding Nom}" Width="80"/>
+                    <GridViewColumn Header="{x:Static p:traduction.lbl_montant}" DisplayMemberBinding="{Binding Montant}" Width="80"/>
+                    <GridViewColumn Header="{x:Static p:traduction.lbl_nb_versements}" DisplayMemberBinding="{Binding NbVersements}" Width="100"/>
+                    <GridViewColumn Header="{x:Static p:traduction.lbl_municipalite}" DisplayMemberBinding="{Binding Municipalite}" Width="100"/>
+                    <GridViewColumn Header="{x:Static p:traduction.lbl_code_postal}"  DisplayMemberBinding="{Binding CodePostal}" Width="80"/>
+                    <GridViewColumn Header="{x:Static p:traduction.lbl_parti}" DisplayMemberBinding="{Binding Parti}" Width="80"/>
+                    <GridViewColumn Header="{x:Static p:traduction.lbl_candidat}" DisplayMemberBinding="{Binding Candidat}" Width="80"/>
+                    <GridViewColumn Header="{x:Static p:traduction.lbl_evenement}" DisplayMemberBinding="{Binding DateEvenement}" Width="100"/>
+                    <GridViewColumn Header="{x:Static p:traduction.lbl_annee_financiere}" DisplayMemberBinding="{Binding AnneeFinanciere}" Width="100"/>
+                    <GridViewColumn Header="{x:Static p:traduction.lbl_illegale}"  DisplayMemberBinding="{Binding EstIllegale, Converter={StaticResource boolToIllegale}}" Width="200"/>
                 </GridView>
             </ListView.View>
         </ListView>

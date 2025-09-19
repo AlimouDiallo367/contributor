@@ -147,7 +147,7 @@
   <data name="lbl_illegale" xml:space="preserve">
     <value>Illégale?</value>
   </data>
-  <data name="lbl_illegales" xml:space="preserve">
+  <data name="lbl_illegales_seulement" xml:space="preserve">
     <value>Illégales seulement</value>
   </data>
   <data name="lbl_langue" xml:space="preserve">
@@ -159,7 +159,7 @@
   <data name="lbl_municipalite" xml:space="preserve">
     <value>Municipalité</value>
   </data>
-  <data name="lbl_nb_paiements" xml:space="preserve">
+  <data name="lbl_nb_versements" xml:space="preserve">
     <value>Nb. Versements</value>
   </data>
   <data name="lbl_nom" xml:space="preserve">
@@ -185,5 +185,8 @@
   </data>
   <data name="titre_erreur" xml:space="preserve">
     <value>Erreur</value>
+  </data>
+  <data name="titre_information" xml:space="preserve">
+    <value>Information</value>
   </data>
 </root>

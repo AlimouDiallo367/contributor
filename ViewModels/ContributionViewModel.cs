@@ -62,8 +62,7 @@ namespace TP1_Donateurs.ViewModels
                 }
                 catch (Exception ex)
                 {
-                    //MessageBox.Show(messageBoxText, caption, button, icon); 
-                    MessageBox.Show("Fichier CSV non valide.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error); 
+                    MessageBox.Show(TP1_Donateurs.Properties.traduction.msg_fichier_invalide, TP1_Donateurs.Properties.traduction.titre_erreur, MessageBoxButton.OK, MessageBoxImage.Error); 
                 }    
             }
             CurrentActionMode = ACTIONMODE.ADD;
@@ -76,14 +75,6 @@ namespace TP1_Donateurs.ViewModels
             CurrentActionMode = ACTIONMODE.DISPLAY;
         }
         
-        //private void AfficherContributionsIllegales(object? obj)
-        //{
-        //    LesContributions.Clear();
-        //    foreach (var contribution in analyseur.RechercherContributionsPossiblementIllegales())
-        //    {
-        //        LesContributions.Add(contribution); 
-        //    }
-        //}
         private void FiltrerContributions()
         {
             LesContributions.Clear();

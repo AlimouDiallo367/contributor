@@ -124,7 +124,7 @@
     <value>Cancel</value>
   </data>
   <data name="btn_effacer" xml:space="preserve">
-    <value />
+    <value>Erase</value>
   </data>
   <data name="btn_sauvegarder" xml:space="preserve">
     <value>Save</value>
@@ -147,7 +147,7 @@
   <data name="lbl_illegale" xml:space="preserve">
     <value>Illegal?</value>
   </data>
-  <data name="lbl_illegales" xml:space="preserve">
+  <data name="lbl_illegales_seulement" xml:space="preserve">
     <value>Illegals only</value>
   </data>
   <data name="lbl_langue" xml:space="preserve">
@@ -159,7 +159,7 @@
   <data name="lbl_municipalite" xml:space="preserve">
     <value>Municipality</value>
   </data>
-  <data name="lbl_nb_paiements" xml:space="preserve">
+  <data name="lbl_nb_versements" xml:space="preserve">
     <value>Nb. Payments</value>
   </data>
   <data name="lbl_nom" xml:space="preserve">
@@ -185,5 +185,8 @@
   </data>
   <data name="titre_erreur" xml:space="preserve">
     <value>Error</value>
+  </data>
+  <data name="titre_information" xml:space="preserve">
+    <value>Information</value>
   </data>
 </root>

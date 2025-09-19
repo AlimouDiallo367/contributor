@@ -153,9 +153,9 @@ namespace TP1_Donateurs.Properties {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Illégales seulement.
         /// </summary>
-        public static string lbl_illegales {
+        public static string lbl_illegales_seulement {
             get {
-                return ResourceManager.GetString("lbl_illegales", resourceCulture);
+                return ResourceManager.GetString("lbl_illegales_seulement", resourceCulture);
             }
         }
         
@@ -189,9 +189,9 @@ namespace TP1_Donateurs.Properties {
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Nb. Versements.
         /// </summary>
-        public static string lbl_nb_paiements {
+        public static string lbl_nb_versements {
             get {
-                return ResourceManager.GetString("lbl_nb_paiements", resourceCulture);
+                return ResourceManager.GetString("lbl_nb_versements", resourceCulture);
             }
         }
         
@@ -264,6 +264,15 @@ namespace TP1_Donateurs.Properties {
         public static string titre_erreur {
             get {
                 return ResourceManager.GetString("titre_erreur", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Information.
+        /// </summary>
+        public static string titre_information {
+            get {
+                return ResourceManager.GetString("titre_information", resourceCulture);
             }
         }
     }

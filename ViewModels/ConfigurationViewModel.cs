@@ -46,24 +46,34 @@ namespace TP1_Donateurs.ViewModels
 
         private void Sauvegarder(object? obj)
         {
-            // Exemple : sauvegarde en mémoire (tu pourrais l’écrire dans un fichier de config plus tard)
-            MessageBox.Show(
-                $"Langue: {LangueSelectionnee}\nRedémarrage auto: {RedemarrerApresChangements}",
-                "Configuration sauvegardée",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information
-            );
+            try
+            {
+                if (RedemarrerApresChangements)
+                {
+                    MessageBox.Show(
+                        TP1_Donateurs.Properties.traduction.msg_confirmation_redemarrage,
+                        TP1_Donateurs.Properties.traduction.titre_information,
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information);
 
-            if (RedemarrerApresChangements)
-            {
-                // Redémarre l'application
-                Process.Start(Environment.ProcessPath!);
-                Application.Current.Shutdown();
+                    // Redémarre l'application
+                    Process.Start(Environment.ProcessPath!);
+                    Application.Current.Shutdown();
+                }
+                else
+                {
+                    FermerFenetre(obj);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                FermerFenetre(obj);
-            }
+                MessageBox.Show(
+                    ex.Message,
+                    TP1_Donateurs.Properties.traduction.titre_erreur,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error
+                );
+            } 
         }
 
         private void Annuler(object? obj)
