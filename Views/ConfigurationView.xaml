@@ -23,10 +23,9 @@
         <StackPanel Grid.Row="0">
             <WrapPanel HorizontalAlignment="Center">
                 <Label Content="{x:Static p:traduction.lbl_langue}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                <ComboBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="80" ItemsSource="{Binding LangueDisponibles}" SelectedItem="{Binding LangueSelectionnee, Mode=TwoWay}">
-                    <!--<ComboBoxItem Content="Français" IsSelected="True"/>
-                    <ComboBoxItem Content="English"/>-->
-                </ComboBox>
+                <ComboBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="80"
+                          ItemsSource="{Binding LangueDisponibles}"
+                          SelectedItem="{Binding LangueSelectionnee, Mode=TwoWay}"/>
             </WrapPanel> 
         </StackPanel>
         <StackPanel Grid.Row="1" VerticalAlignment="Bottom">

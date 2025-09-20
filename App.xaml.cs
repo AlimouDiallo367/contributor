@@ -13,10 +13,6 @@ namespace TP1_Donateurs
     {
         public App()
         {
-            //TP1_Donateurs.Properties.Settings.Default.langue = "en-US";
-            //TP1_Donateurs.Properties.Settings.Default.langue = "fr-CA";
-
-            //TP1_Donateurs.Properties.Settings.Default.Save();
             string langue = TP1_Donateurs.Properties.Settings.Default.langue;
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(langue);
         }

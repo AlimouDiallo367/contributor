@@ -14,6 +14,8 @@ namespace TP1_Donateurs.ViewModels
         {
             
         }
+
+        // Ancienne approche que j'utilisais - Méthode Lyne 
         public enum ACTIONMODE { ADD, DISPLAY };
         private ACTIONMODE _currentActionMode = ACTIONMODE.DISPLAY;
 

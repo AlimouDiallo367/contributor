@@ -19,7 +19,7 @@ namespace TP1_Donateurs.ViewModels
         public RelayCommand CmdContributionsIllegales { get; private set; }
         #endregion
 
-        private int Counter
+        public int NbContributions 
         {
             get => LesContributions?.Count ?? 0;
         }
@@ -42,7 +42,7 @@ namespace TP1_Donateurs.ViewModels
             LesContributions = new ObservableCollection<Contribution>();
             CmdImporterFichier = new RelayCommand(ImporterFichier, null);
             CmdEffacer = new RelayCommand(EffacerContributions, null);
-            CmdContributionsIllegales = new RelayCommand(FiltrerContributions, CanExecuteFiltre);
+            CmdContributionsIllegales = new RelayCommand(FiltrerContributions, PeutFiltrer);
         }
 
         #region Boutons
@@ -59,31 +59,30 @@ namespace TP1_Donateurs.ViewModels
                     {
                         LesContributions.Add(contribution); 
                     }
-
+                    OnPropertyChanged(nameof(NbContributions));
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(TP1_Donateurs.Properties.traduction.msg_fichier_invalide, TP1_Donateurs.Properties.traduction.titre_erreur, MessageBoxButton.OK, MessageBoxImage.Error); 
                 }    
             }
-           // CurrentActionMode = ACTIONMODE.ADD;
         }
 
         private void EffacerContributions(object? obj)
         {
             LesContributions.Clear();
             AfficherContributionsIllegales = false;
-            OnPropertyChanged(nameof(Counter));
+            OnPropertyChanged(nameof(NbContributions));
         }
         
         private void FiltrerContributions(object? obj)
         {
-            if (obj is bool isChecked)
+            if (obj is bool estCoche)
             {
-                AfficherContributionsIllegales = isChecked;
+                AfficherContributionsIllegales = estCoche;
                 LesContributions.Clear();
 
-                var data = isChecked ? analyseur.RechercherContributionsPossiblementIllegales() : analyseur.Contributions;
+                var data = estCoche ? analyseur.RechercherContributionsPossiblementIllegales() : analyseur.Contributions;
 
                 foreach (var contribution in data)
                 {
@@ -93,7 +92,7 @@ namespace TP1_Donateurs.ViewModels
         }
 
         
-        private bool CanExecuteFiltre(object? obj)
+        private bool PeutFiltrer(object? obj)
         {
             return LesContributions.Count > 0;
         }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TP1_Donateurs.Views"
         xmlns:viewmodels="clr-namespace:TP1_Donateurs.ViewModels"
         mc:Ignorable="d"
-        Title="Donateur" Height="650" Width="900" x:Name="win" Icon="/Resources/election.ico">
+        Title="Donateur" Height="620" Width="960" x:Name="win" Icon="/Resources/election.ico">
     <Window.DataContext>
         <viewmodels:MainViewModel/>
     </Window.DataContext>

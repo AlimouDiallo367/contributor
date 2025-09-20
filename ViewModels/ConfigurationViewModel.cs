@@ -46,10 +46,11 @@ namespace TP1_Donateurs.ViewModels
 
         private void Sauvegarder(object? obj)
         {
-            TP1_Donateurs.Properties.Settings.Default.langue = (LangueSelectionnee == "Français") ? "fr-CA" : "en-US";
-            TP1_Donateurs.Properties.Settings.Default.Save();
             try
             {
+                TP1_Donateurs.Properties.Settings.Default.langue = (LangueSelectionnee == "Français") ? "fr-CA" : "en-US";
+                TP1_Donateurs.Properties.Settings.Default.Save();
+
                 if (RedemarrerApresChangements)
                 {
                     MessageBox.Show(
@@ -58,9 +59,7 @@ namespace TP1_Donateurs.ViewModels
                         MessageBoxButton.OK,
                         MessageBoxImage.Information);
 
-                    // Redémarre l'application -- From Chat
-                    Process.Start(Environment.ProcessPath!);
-                    Application.Current.Shutdown();
+                    RedemarrerApplication();
                 }
                 else
                 {
@@ -89,6 +88,13 @@ namespace TP1_Donateurs.ViewModels
             {
                 fenetre.Close();
             }
+        }
+
+        private void RedemarrerApplication()
+        {
+            // Redémarre l'application -- From Chat
+            Process.Start(Environment.ProcessPath!);
+            Application.Current.Shutdown();
         }
     }
 }
