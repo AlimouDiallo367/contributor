@@ -39,7 +39,7 @@ namespace TP1_Donateurs.ViewModels
         {
             //CurrentViewModel = _configurationViewModel;
             var configurationWindow = new Views.ConfigurationView();
-            configurationWindow.DataContext = _configurationViewModel;
+            //configurationWindow.DataContext = _configurationViewModel;
             configurationWindow.Show();
         }
     }
