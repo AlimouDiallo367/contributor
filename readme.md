@@ -1,0 +1,3 @@
+## WPF MVVM Tool for Political Donor Compliance (Academic Project)
+Contributor is a C# desktop application built with WPF and MVVM to demonstrate advanced technical skills (Binding, Internationalization, Delegates, Resources).
+The project uses a fictional mandate to process and audit simulated political contribution data, focusing on compliance validation and identifying non-conforming donor records.
