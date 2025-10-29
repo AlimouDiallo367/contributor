@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows;
-using TP1_Donateurs.ViewModels.Commands;
+using Contributor.ViewModels.Commands;
 
-namespace TP1_Donateurs.ViewModels
+namespace Contributor.ViewModels
 {
     public class ConfigurationViewModel : BaseViewModel
     {
@@ -37,7 +37,7 @@ namespace TP1_Donateurs.ViewModels
 
         public ConfigurationViewModel()
         {
-            LangueSelectionnee = TP1_Donateurs.Properties.Settings.Default.langue == "fr-CA" ? "Français" : "English";
+            LangueSelectionnee = Contributor.Properties.Settings.Default.langue == "fr-CA" ? "Français" : "English";
             RedemarrerApresChangements = true;
 
             CmdSauvegarder = new RelayCommand(Sauvegarder, null);
@@ -48,14 +48,14 @@ namespace TP1_Donateurs.ViewModels
         {
             try
             {
-                TP1_Donateurs.Properties.Settings.Default.langue = (LangueSelectionnee == "Français") ? "fr-CA" : "en-US";
-                TP1_Donateurs.Properties.Settings.Default.Save();
+                Contributor.Properties.Settings.Default.langue = (LangueSelectionnee == "Français") ? "fr-CA" : "en-US";
+                Contributor.Properties.Settings.Default.Save();
 
                 if (RedemarrerApresChangements)
                 {
                     MessageBox.Show(
-                        TP1_Donateurs.Properties.traduction.msg_confirmation_redemarrage,
-                        TP1_Donateurs.Properties.traduction.titre_information,
+                        Contributor.Properties.traduction.msg_confirmation_redemarrage,
+                        Contributor.Properties.traduction.titre_information,
                         MessageBoxButton.OK,
                         MessageBoxImage.Information);
 
@@ -70,7 +70,7 @@ namespace TP1_Donateurs.ViewModels
             {
                 MessageBox.Show(
                     ex.Message,
-                    TP1_Donateurs.Properties.traduction.titre_erreur,
+                    Contributor.Properties.traduction.titre_erreur,
                     MessageBoxButton.OK,
                     MessageBoxImage.Error
                 );

@@ -1,10 +1,10 @@
-﻿<Window x:Class="TP1_Donateurs.Views.MainView"
+﻿<Window x:Class="Contributor.Views.MainView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TP1_Donateurs.Views"
-        xmlns:viewmodels="clr-namespace:TP1_Donateurs.ViewModels"
+        xmlns:local="clr-namespace:Contributor.Views"
+        xmlns:viewmodels="clr-namespace:Contributor.ViewModels"
         mc:Ignorable="d"
         Title="Donateur" Height="620" Width="960" x:Name="win" Icon="/Resources/election.ico">
     <Window.DataContext>

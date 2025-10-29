@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace TP1_Donateurs.Views
+namespace Contributor.Views
 {
     /// <summary>
     /// Logique d'interaction pour ConfigurationView.xaml

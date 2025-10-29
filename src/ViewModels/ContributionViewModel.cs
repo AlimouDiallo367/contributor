@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using TP1_Donateurs.Models;
-using TP1_Donateurs.ViewModels.Commands;
+using Contributor.Models;
+using Contributor.ViewModels.Commands;
 
-namespace TP1_Donateurs.ViewModels
+namespace Contributor.ViewModels
 {
     public class ContributionViewModel : BaseViewModel
     {
@@ -63,7 +63,7 @@ namespace TP1_Donateurs.ViewModels
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(TP1_Donateurs.Properties.traduction.msg_fichier_invalide, TP1_Donateurs.Properties.traduction.titre_erreur, MessageBoxButton.OK, MessageBoxImage.Error); 
+                    MessageBox.Show(Contributor.Properties.traduction.msg_fichier_invalide, Contributor.Properties.traduction.titre_erreur, MessageBoxButton.OK, MessageBoxImage.Error); 
                 }    
             }
         }

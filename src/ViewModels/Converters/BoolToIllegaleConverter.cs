@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 
-namespace TP1_Donateurs.ViewModels.Converters
+namespace Contributor.ViewModels.Converters
 {
     public class BoolToIllegaleConverter : IValueConverter
     {

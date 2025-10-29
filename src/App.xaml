@@ -1,7 +1,7 @@
-﻿<Application x:Class="TP1_Donateurs.App"
+﻿<Application x:Class="Contributor.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:TP1_Donateurs"
+             xmlns:local="clr-namespace:Contributor"
              StartupUri="Views/MainView.xaml">
     <Application.Resources>
          

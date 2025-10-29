@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TP1_Donateurs.ViewModels.Commands;
+using Contributor.ViewModels.Commands;
 
-namespace TP1_Donateurs.ViewModels
+namespace Contributor.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {

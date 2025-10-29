@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TP1_Donateurs.Properties {
+namespace Contributor.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace TP1_Donateurs.Properties {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TP1_Donateurs.Properties.traduction", typeof(traduction).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Contributor.Properties.traduction", typeof(traduction).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

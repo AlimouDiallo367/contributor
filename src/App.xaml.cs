@@ -4,7 +4,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Windows;
 
-namespace TP1_Donateurs
+namespace Contributor
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -13,7 +13,7 @@ namespace TP1_Donateurs
     {
         public App()
         {
-            string langue = TP1_Donateurs.Properties.Settings.Default.langue;
+            string langue = Contributor.Properties.Settings.Default.langue;
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(langue);
         }
     }

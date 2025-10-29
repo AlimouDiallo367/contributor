@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace TP1_Donateurs.Models
+namespace Contributor.Models
 {
     
     public class AnalyseurContributions
